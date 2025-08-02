@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeCanvas Diaries</title>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ✅ Toastify CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+
+  <!-- ✅ Toastify JS -->
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</head>
+
+<body>
+  <header class="app-header">
+    <h1>CodeCanvas Diaries</h1>
+    <div class="controls">
+      <input type="text" id="projectNameInput" placeholder="Untitled Project" />
+      <button id="saveBtn">💾 Save</button>
+      <button id="savedProjectsBtn" onclick="window.location.href='saved.html'">📁 View Saved</button>
+      <span id="timestamp"><span id="timevalue"></span></span>
+      <div class="theme-toggle">
+        <label for="themeSwitch">🎨Theme</label>
+        <select id="themeSwitch">
+          <option value="light">🌞</option>
+          <option value="dark">🌙 </option>
+          <option value="hacker">💻</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+
+  <main class="editor-area">
+    <!-- Mobile Tabs -->
+    <div class="mobile-tabs">
+      <button data-tab="html" class="tab active">HTML</button>
+      <button data-tab="css" class="tab">CSS</button>
+      <button data-tab="js" class="tab">JS</button>
+    </div>
+
+    <!-- Editors (Desktop: All visible, Mobile: One shown at a time via CSS/JS) -->
+    <div class="code-editors">
+      <div class="editor html-editor" data-editor="html">
+        <h2>HTML</h2>
+        <textarea id="htmlCode" placeholder="Write HTML here..."></textarea>
+      </div>
+      <div class="editor css-editor" data-editor="css">
+        <h2>CSS</h2>
+        <textarea id="cssCode" placeholder="Write CSS here..."></textarea>
+      </div>
+      <div class="editor js-editor" data-editor="js">
+        <h2>JS</h2>
+        <textarea id="jsCode" placeholder="Write JS here..."></textarea>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <button id="runBtn">▶️ Run</button>
+      <button id="resetBtn">🔄 Reset</button>
+      <button id="copyBtn">📋 Copy</button>
+    </div>
+
+    <!-- Output -->
+<section class="output-section">
+  <h2>Output</h2>
+  <iframe id="outputFrame"></iframe>
+
+  <!-- 🔥 Error message will show here if code is broken -->
+  <div id="errorBox" style="display: none; color: red; margin-top: 10px; font-weight: bold;"></div>
+</section>
+</main>
+
+  <script src="script.js"></script>
+  <footer style="text-align: center; padding: 1rem; font-size: 0.9rem; color: #aaa;">
+  Debugged with brain cells & bravery by 
+  <a href="chauhankm81@gmail.com" style="color: #78ff92; text-decoration: none; font-weight: bold;">
+    Khushi
+  </a> 💚
+</footer>
+
+</body>
+</html>
